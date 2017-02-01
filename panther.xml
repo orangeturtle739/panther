@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repositories encoding="UTF-8" version="1.1">
+  <repo priority="50" quality="experimental">
+    <name>panther</name>
+    <description>jacob's cool software</description>
+    <owner>
+      <email>swimgiraffe435@gmail.com</email>
+      <name>Jacob Glueck</name>
+    </owner>
+    <source type="git">file:///home/jacob/overlays/panther</source>
+  </repo>
+</repositories>
