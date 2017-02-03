@@ -11,7 +11,7 @@ IUSE="gtk doc static debug threads +ocamlopt test"
 DESCRIPTION="Two-way cross-platform file synchronizer"
 HOMEPAGE="http://www.cis.upenn.edu/~bcpierce/unison/"
 LICENSE="GPL-2"
-SLOT="$(get_version_component_range 1-2 ${PV})"
+SLOT="9999"
 KEYWORDS="amd64 ~arm ~ppc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris"
 
 # ocaml version so we are sure it has ocamlopt use flag
