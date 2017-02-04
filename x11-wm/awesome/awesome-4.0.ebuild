@@ -29,7 +29,8 @@ COMMON_DEPEND="
 	x11-libs/libXcursor
 	>=x11-libs/libX11-1.3.99.901
 	dbus? ( >=sys-apps/dbus-1 )
-	elibc_FreeBSD? ( dev-libs/libexecinfo )"
+	elibc_FreeBSD? ( dev-libs/libexecinfo )
+	x11-libs/xcb-util-xrm"
 
 # graphicsmagick's 'convert -channel' has no Alpha support, bug #352282
 DEPEND="${COMMON_DEPEND}
