@@ -1,99 +1,62 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: app-pda/libimobiledevice/libimobiledevice-9999.ebuild,v 1.0 2013/10/31 16:38:49 srcs Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python{2_7,3_4,3_5} )
-inherit eutils python-r1
+PYTHON_COMPAT=( python2_7 )
+EGIT_MASTER="master"
+inherit autotools eutils git-2 python-r1 multilib
 
 DESCRIPTION="Support library to communicate with Apple iPhone/iPod Touch devices"
 HOMEPAGE="http://www.libimobiledevice.org/"
-SRC_URI="https://github.com/libimobiledevice/libimobiledevice/archive/master.zip"
+SRC_URI=""
+EGIT_REPO_URI="https://github.com/libimobiledevice/libimobiledevice.git"
 
-# While COPYING* doesn't mention 'or any later version', all the headers do, hence use +
-LICENSE="GPL-2+ LGPL-2.1+"
-SLOT="0/6" # based on SONAME of libimobiledevice.so
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86"
-IUSE="gnutls python static-libs"
+LICENSE="GPL-2 LGPL-2.1"
+SLOT="0/6"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
+IUSE="gnutls python"
 
-RDEPEND=">=app-pda/libplist-1.11:=
-	>=app-pda/libusbmuxd-1.0.9:=
+RDEPEND=">=app-pda/libplist-1.10[python?,${PYTHON_USEDEP}]
+	>=app-pda/libusbmuxd-1.0.9
 	gnutls? (
-		dev-libs/libgcrypt:0
+		dev-libs/libgcrypt
 		>=dev-libs/libtasn1-1.1
 		>=net-libs/gnutls-2.2.0
-		)
-	!gnutls? ( dev-libs/openssl:0 )
-	python? (
-		${PYTHON_DEPS}
-		app-pda/libplist[python(-),${PYTHON_USEDEP}]
-		)"
+	)
+	!gnutls? ( dev-libs/openssl:0 )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
-	python? ( >=dev-python/cython-0.17[${PYTHON_USEDEP}] )"
-
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+	python? (
+		${PYTHON_DEPS}
+		>=dev-python/cython-0.17[${PYTHON_USEDEP}]
+	)"
 
 DOCS=( AUTHORS NEWS README )
 
-BUILD_DIR="${S}_build"
+pkg_setup() {
+	# Prevent linking to the installed copy
+	if has_version "<${CATEGORY}/${P}"; then
+		rm -f "${EROOT}"/usr/$(get_libdir)/${PN}$(get_libname)
+	fi
+}
 
 src_prepare() {
-	epatch "${FILESDIR}/gnutls-3.4.patch"
+	eautoreconf
 }
 
 src_configure() {
-	local ECONF_SOURCE=${S}
+	use python && python_export_best
 
-	local myeconfargs=( $(use_enable static-libs static) )
-	use gnutls && myeconfargs+=( --disable-openssl )
+	local myconf
+	use gnutls && myconf='--disable-openssl'
+	use python || myconf+=' --without-cython'
 
-	do_configure() {
-		mkdir -p "${BUILD_DIR}" || die
-		pushd "${BUILD_DIR}" >/dev/null || die
-		econf "${myeconfargs[@]}" "${@}"
-		popd >/dev/null || die
-	}
-
-	do_configure_python() {
-		# Bug 567916
-		PYTHON_LDFLAGS="$(python_get_LIBS)" do_configure "$@"
-	}
-
-	do_configure --without-cython
-	use python && python_foreach_impl do_configure_python
-}
-
-src_compile() {
-	python_compile() {
-		emake -C "${BUILD_DIR}"/cython -j1 \
-			VPATH="${S}/cython:${native_builddir}/cython" \
-			imobiledevice_la_LIBADD="${native_builddir}/src/libimobiledevice.la"
-	}
-
-	local native_builddir=${BUILD_DIR}
-	pushd "${BUILD_DIR}" >/dev/null || die
-	emake -j1
-	use python && python_foreach_impl python_compile
-	popd >/dev/null || die
+	econf --disable-static ${myconf}
 }
 
 src_install() {
-	python_install() {
-		emake -C "${BUILD_DIR}/cython" -j1 \
-			VPATH="${S}/cython:${native_builddir}/cython" \
-			DESTDIR="${D}" install
-	}
+	default
 
-	local native_builddir=${BUILD_DIR}
-	pushd "${BUILD_DIR}" >/dev/null || die
-	emake -j1 DESTDIR="${D}" install
-	use python && python_foreach_impl python_install
-	popd >/dev/null || die
-
-	dodoc docs/html/*
-	if use python; then
-		insinto /usr/include/${PN}/cython
-		doins cython/imobiledevice.pxd
-	fi
 	prune_libtool_files --all
 }
