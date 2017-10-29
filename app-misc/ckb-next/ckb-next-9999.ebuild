@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit qmake-utils systemd
+inherit qmake-utils systemd git-r3
 
 DESCRIPTION="RGB Driver for Linux and macOS"
 HOMEPAGE="https://github.com/mattanger/ckb-next"
