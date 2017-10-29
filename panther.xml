@@ -7,6 +7,6 @@
       <email>swimgiraffe435@gmail.com</email>
       <name>Jacob Glueck</name>
     </owner>
-    <source type="git">file:///home/jacob/overlays/panther</source>
+    <source type="git">https://github.com/orangeturtle739/panther</source>
   </repo>
 </repositories>
