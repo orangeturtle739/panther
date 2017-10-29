@@ -25,10 +25,9 @@ RDEPEND="${DEPEND}"
 
 DOCS=( README.md BUILD.md DAEMON.md )
 
-#src_prepare() {
-	# sed -i -e "s/-Werror=all//" src/ckb-daemon/ckb-daemon.pro || die
-	# sed -i -e "/quazip/d" -e "s/^.*QUAZIP_STATIC/LIBS += -lquazip/" src/ckb/ckb.pro || die
-#}
+src_prepare() {
+	epatch "${FILESDIR}/openrc.patch"
+}
 
 src_configure() {
 	eqmake5
