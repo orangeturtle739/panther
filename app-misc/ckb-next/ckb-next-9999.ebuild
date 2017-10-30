@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit qmake-utils systemd git-r3
+inherit qmake-utils systemd git-r3 linux-info
 
 DESCRIPTION="RGB Driver for Linux and macOS"
 HOMEPAGE="https://github.com/mattanger/ckb-next"
@@ -24,6 +24,8 @@ DEPEND="dev-libs/quazip[qt5]
 RDEPEND="${DEPEND}"
 
 DOCS=( README.md BUILD.md DAEMON.md )
+
+CONFIG_CHECK="CONFIG_INPUT_UINPUT"
 
 src_prepare() {
 	epatch "${FILESDIR}/openrc.patch"
