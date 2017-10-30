@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}"
 
 DOCS=( README.md BUILD.md DAEMON.md )
 
-CONFIG_CHECK="CONFIG_INPUT_UINPUT"
+CONFIG_CHECK="INPUT_UINPUT"
 
 src_prepare() {
 	epatch "${FILESDIR}/openrc.patch"
