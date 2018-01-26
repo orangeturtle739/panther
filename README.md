@@ -5,3 +5,4 @@ A collection of [Gentoo](https://www.gentoo.org/) ebuilds which I couldn't find 
 ## Contents
 
 * `app-misc/ckb`: an ebuild for [ckb-next](https://github.com/mattanger/ckb-next), the surviving fork of [ckb](https://github.com/ccMSC/ckb). Provides very nice drives for Corsair keyboards and mice.
+* `net-wireless/broadcom-sta`: contains an `r5` version with patches for kernels 4.14 and 4.15 (taken from the debian patchset: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=885885)
