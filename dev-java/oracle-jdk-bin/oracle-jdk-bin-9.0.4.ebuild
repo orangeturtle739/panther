@@ -17,7 +17,7 @@ done
 DESCRIPTION="Oracle's Java SE Development Kit"
 HOMEPAGE="http://www.oracle.com/technetwork/java/javase/"
 LICENSE="Oracle-BCLA-JavaSE"
-SLOT="${PV%%.*}"
+SLOT="9"
 IUSE="alsa commercial cups doc +fontconfig +gentoo-vm gtk2 gtk3 headless-awt javafx nsplugin selinux source"
 REQUIRED_USE="javafx? ( alsa fontconfig ^^ ( gtk2 gtk3 ) )"
 RESTRICT="fetch preserve-libs strip"
