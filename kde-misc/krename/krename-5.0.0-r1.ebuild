@@ -43,9 +43,7 @@ RDEPEND="${COMMON_DEPEND}
 	!kde-misc/krename:4
 "
 
-src_prepare() {
-    epatch "${FILESDIR}/millis.patch"
-}
+PATCHES=("${FILESDIR}/millis.patch")
 
 src_configure() {
 	local mycmakeargs=(
