@@ -5,7 +5,7 @@
 EAPI="5"
 
 if [[ ${PV} == "9999" ]] ; then
-	EGIT_REPO_URI="https://git.gitorious.org/linux-can/can-utils.git"
+	EGIT_REPO_URI="https://github.com/linux-can/can-utils"
 	vcs=git-2
 else
 	SRC_URI=""
