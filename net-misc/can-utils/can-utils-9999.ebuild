@@ -1,0 +1,39 @@
+# Copyright 2013 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+EAPI="5"
+
+if [[ ${PV} == "9999" ]] ; then
+	EGIT_REPO_URI="https://git.gitorious.org/linux-can/can-utils.git"
+	vcs=git-2
+else
+	SRC_URI=""
+	KEYWORDS="~amd64 ~x86"
+fi
+
+inherit $vcs autotools
+
+DESCRIPTION="CAN Bus utilities."
+HOMEPAGE=""
+
+LICENSE="GPL-2"
+SLOT="0"
+IUSE=""
+
+src_prepare() {
+	eautoreconf --force --install
+}
+
+#src_configure() {
+#	econf $(use_enable btrfs) $(use_enable ext4) $(use_enable lvm) $(use_enable zypp) $(use_enable xattr xattrs) $(use_enable pam)
+#}
+
+src_compile() {
+	emake || die "Compile failed."
+}
+
+src_install() {
+	emake DESTDIR="${D}" PREFIX=/usr install || die "Install failed."
+	
+}
