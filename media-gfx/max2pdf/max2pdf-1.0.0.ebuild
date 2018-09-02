@@ -5,8 +5,7 @@ HOMEPAGE="https://github.com/orangeturtle739/max2pdf"
 SRC_URI="https://github.com/orangeturtle739/max2pdf/archive/v$PV.tar.gz"
 S="${WORKDIR}/paperman-$PV"
 
-# The original work had no license https://github.com/sglass68/paperman
-LICENSE=""
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
