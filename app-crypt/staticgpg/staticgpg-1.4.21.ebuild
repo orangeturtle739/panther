@@ -1,6 +1,5 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI="5"
 
@@ -77,7 +76,7 @@ pkg_postinst() {
 	ewarn "${PN} is only intended for use inside an initramfs."
 	echo
 	elog
-	elog "See http://www.gentoo.org/doc/en/gnupg-user.xml for documentation on gnupg"
+	elog "See https://www.gentoo.org/doc/en/gnupg-user.xml for documentation on gnupg"
 	elog
 	elog "This is a special variant, which is compiled statically"
 	elog "for use primarily in an initramfs context."

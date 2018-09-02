@@ -1,7 +1,3 @@
-# Copyright 1999-2016 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Id$
-
 EAPI=5
 
 inherit cmake-utils git-r3 linux-info
@@ -16,7 +12,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-libs/quazip[qt5]
+DEPEND="dev-libs/quazip
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
 	dev-qt/qtnetwork:5
@@ -31,4 +27,3 @@ CONFIG_CHECK="INPUT_UINPUT"
 src_prepare() {
 	epatch "${FILESDIR}/udev-dest.patch"
 }
-

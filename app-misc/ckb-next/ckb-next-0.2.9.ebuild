@@ -1,7 +1,3 @@
-# Copyright 1999-2016 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Id$
-
 EAPI=5
 
 inherit qmake-utils systemd linux-info
@@ -13,9 +9,8 @@ SRC_URI="https://github.com/ckb-next/ckb-next/archive/v$PV.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
 
-DEPEND="dev-libs/quazip[qt5]
+DEPEND="dev-libs/quazip
 	dev-qt/qtcore:5
 	dev-qt/qtgui:5
 	dev-qt/qtnetwork:5
