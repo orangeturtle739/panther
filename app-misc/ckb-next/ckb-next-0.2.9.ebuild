@@ -7,12 +7,12 @@ EAPI=5
 inherit qmake-utils systemd linux-info
 
 DESCRIPTION="RGB Driver for Linux and macOS"
-HOMEPAGE="https://github.com/mattanger/ckb-next"
+HOMEPAGE="https://github.com/ckb-next/ckb-next"
 SRC_URI="https://github.com/ckb-next/ckb-next/archive/v$PV.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="dev-libs/quazip[qt5]

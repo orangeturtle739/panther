@@ -4,16 +4,15 @@
 
 EAPI=5
 
-inherit cmake-utils git-r3 linux-info
+inherit cmake-utils linux-info
 
 DESCRIPTION="RGB Driver for Linux and macOS"
 HOMEPAGE="https://github.com/ckb-next/ckb-next"
-SRC_URI=""
-EGIT_REPO_URI="https://github.com/ckb-next/ckb-next"
+SRC_URI="https://github.com/ckb-next/ckb-next/archive/v$PV.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 IUSE=""
 
 DEPEND="dev-libs/quazip[qt5]
