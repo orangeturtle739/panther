@@ -12,7 +12,7 @@ SRC_URI="https://github.com/ckb-next/ckb-next/archive/v$PV.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="dev-libs/quazip[qt5]
