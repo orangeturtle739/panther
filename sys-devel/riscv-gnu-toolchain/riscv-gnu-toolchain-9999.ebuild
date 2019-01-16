@@ -11,7 +11,7 @@ EGIT_CLONE_TYPE="shallow"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="riscv-arch riscv-abi"
 
 DEPEND="sys-devel/autoconf
 	sys-devel/automake
@@ -34,7 +34,7 @@ RDEPEND=""
 RESTRICT="strip"
 
 src_configure() {
-	econf --prefix="$T/install/opt/riscv"
+	econf --prefix="$T/install/opt/riscv" --with-arch=rv64im --with-abi=lp64
 }
 
 src_install() {
