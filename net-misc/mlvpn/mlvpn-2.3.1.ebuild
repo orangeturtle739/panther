@@ -15,6 +15,6 @@ DEPEND="dev-libs/libev
 	dev-libs/libsodium
 	net-libs/libpcap"
 
-src_prepare() {
-	eautoreconf --force --install
-}
+#src_prepare() {
+#	eautoreconf --force --install
+#}
