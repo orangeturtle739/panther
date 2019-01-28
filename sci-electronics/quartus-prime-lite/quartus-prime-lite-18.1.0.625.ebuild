@@ -52,7 +52,7 @@ src_install() {
 	einfo "The Quartus install runs in unattended mode"
 	einfo "you wont see much and it will take a long time"
 
-	./setup.sh --mode unattended --unattendedmodeui none \
+	./setup.sh --mode unattended --unattendedmodeui none --accept_eula 1 \
 		--installdir "${D}/opt/quartus-lite-${PV}" || die
 	make_desktop_entry "/opt/quartus-lite-${PV}/quartus/bin/quartus" \
 		"Quartus lite ${PV}" "/opt/quartus-lite-${PV}/quartus/adm/quartusii.png"
