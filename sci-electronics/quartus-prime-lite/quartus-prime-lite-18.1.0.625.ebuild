@@ -7,11 +7,12 @@ inherit eutils
 
 DESCRIPTION="Full-featured EDA product for altera devices"
 HOMEPAGE="https://www.altera.com/products/design-software/fpga-design/quartus-prime/overview.html"
-SRC_URI="Quartus-lite-${PV}-linux.tar
-	https://github.com/brendanhoran/gentoo-custom/raw/master/files/libfreetype.so.6"
+SRC_URI="Quartus-lite-${PV}-linux.tar"
+#   Extra libraries are from:
+#	https://github.com/brendanhoran/gentoo-custom/raw/master/files/libfreetype.so.6
+#	https://archive.archlinux.org/packages/l/lib32-fontconfig/lib32-fontconfig-2.12.6-1-x86_64.pkg.tar.xz
 # variable to store the download URLS
 DOWNLOADPAGE="http://dl.altera.com/?edition=lite"
-DOWNLOADFT="https://raw.githubusercontent.com/brendanhoran/gentoo-custom/master/files/libfreetype.so.6"
 
 LICENSE="Quartus-prime-megacore"
 SLOT="0"
@@ -67,7 +68,8 @@ src_install() {
 	dodir "opt/quartus-lite-${PV}/modelsim_ase/lib32"
 	insinto "opt/quartus-lite-${PV}/modelsim_ase/lib32"
 	# Copy over the old freetype lib
-	doins "${PORTAGE_BUILDDIR}/distdir/libfreetype.so.6"
+	doins "${FILESDIR}/libfreetype.so.6"
+	doins "${FILESDIR}/libfontconfig.so.1"
 }
 
 pkg_postinst() {
