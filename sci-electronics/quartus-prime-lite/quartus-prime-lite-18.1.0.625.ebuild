@@ -14,8 +14,7 @@ DOWNLOADPAGE="http://dl.altera.com/?edition=lite"
 LICENSE="Quartus-prime-megacore"
 SLOT="0"
 
-# No keywords as per bug 575684
-KEYWORDS=""
+KEYWORDS="~amd64"
 
 RDEPEND="media-libs/libpng:1.2[abi_x86_32]
 		x11-libs/libXft[abi_x86_32]
