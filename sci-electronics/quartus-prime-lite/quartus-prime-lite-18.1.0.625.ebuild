@@ -7,9 +7,11 @@ inherit eutils
 
 DESCRIPTION="Full-featured EDA product for altera devices"
 HOMEPAGE="https://www.altera.com/products/design-software/fpga-design/quartus-prime/overview.html"
-SRC_URI="Quartus-lite-${PV}-linux.tar"
+SRC_URI="Quartus-lite-${PV}-linux.tar
+	https://github.com/brendanhoran/gentoo-custom/raw/master/files/libfreetype.so.6"
 # variable to store the download URLS
 DOWNLOADPAGE="http://dl.altera.com/?edition=lite"
+DOWNLOADFT="https://raw.githubusercontent.com/brendanhoran/gentoo-custom/master/files/libfreetype.so.6"
 
 LICENSE="Quartus-prime-megacore"
 SLOT="0"
@@ -64,8 +66,12 @@ src_install() {
 	epatch "${FILESDIR}/${P}-vso-launcher.patch"
 	dodir "opt/quartus-lite-${PV}/modelsim_ase/lib32"
 	insinto "opt/quartus-lite-${PV}/modelsim_ase/lib32"
+	# Copy over the old freetype lib
+	doins "${PORTAGE_BUILDDIR}/distdir/libfreetype.so.6"
 }
 
 pkg_postinst() {
 	elog "To launch Quartus, run /opt/quartus-lite-${PV}/quartus/bin/quartus"
+	ewarn "This ebuild bundles a vulnerable and old freetype library"
+	ewarn "Sadly this is needed for vsim. You have been warned"
 }
