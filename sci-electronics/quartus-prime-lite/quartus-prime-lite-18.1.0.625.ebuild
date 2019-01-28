@@ -21,7 +21,8 @@ RDEPEND="media-libs/libpng:1.2[abi_x86_32]
 		app-arch/bzip2[abi_x86_32]
 		sys-libs/zlib[abi_x86_32]
 		sys-libs/glibc[multilib]
-		media-libs/freetype[abi_x86_32]"
+		media-libs/freetype[abi_x86_32]
+		sys-libs/ncurses:5[abi_x86_32]"
 
 RESTRICT="fetch bindist"
 
