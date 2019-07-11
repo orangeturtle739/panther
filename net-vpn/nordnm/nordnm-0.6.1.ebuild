@@ -13,7 +13,7 @@ S="${WORKDIR}/NordVPN-NetworkManager-${PV}/"
 
 LICENSE="GPL-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
