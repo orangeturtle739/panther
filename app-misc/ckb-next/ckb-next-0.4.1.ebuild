@@ -23,6 +23,7 @@ DOCS=( README.md )
 
 CONFIG_CHECK="INPUT_UINPUT"
 
-src_prepare() {
-	epatch "${FILESDIR}/udev-dest.patch"
+src_configure() {
+	local mycmakeargs=(-DDISABLE_UPDATER=1)
+	cmake-utils_src_configure
 }

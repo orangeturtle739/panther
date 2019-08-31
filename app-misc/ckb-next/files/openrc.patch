@@ -1,8 +1,0 @@
---- service/openrc/ckb-daemon	2017-10-29 14:34:41.337833734 -0400
-+++ service/openrc/ckb-daemon	2017-10-29 15:01:26.741358591 -0400
-@@ -1,4 +1,4 @@
--#!/usr/bin/openrc-run
-+#!/sbin/openrc-run
- description="Daemon for the opensource ckb driver for corsair keyboards and mice"
- 
- daemon_ckb="/usr/bin/ckb-daemon"
