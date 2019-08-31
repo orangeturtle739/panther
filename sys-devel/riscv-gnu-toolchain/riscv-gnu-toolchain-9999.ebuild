@@ -11,7 +11,6 @@ EGIT_CLONE_TYPE="shallow"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="riscv-arch riscv-abi"
 
 DEPEND="sys-devel/autoconf
 	sys-devel/automake

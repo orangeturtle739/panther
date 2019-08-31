@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/Chadsr/NordVPN-NetworkManager"
 SRC_URI="https://github.com/Chadsr/NordVPN-NetworkManager/archive/${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/NordVPN-NetworkManager-${PV}/"
 
-LICENSE="GPL-3.0"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64"
 
