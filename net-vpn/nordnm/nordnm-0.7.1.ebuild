@@ -1,6 +1,3 @@
-# Copyright 2018 Gentoo Authors
-# Distributed under the terms of the GNU General Public License v2
-
 EAPI=7
 
 PYTHON_COMPAT=( python3_{5,6,7} )
@@ -15,5 +12,12 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
-RDEPEND="${DEPEND}"
+DEPEND="
+	>=dev-python/numpy-1.11.0[${PYTHON_USEDEP}]
+	>=dev-python/requests-2.9.0[${PYTHON_USEDEP}]
+"
+
+RDEPEND="
+	${DEPEND}
+	dev-python/setuptools[${PYTHON_USEDEP}]
+"
