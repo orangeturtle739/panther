@@ -24,3 +24,24 @@ A collection of [Gentoo](https://www.gentoo.org/) ebuilds which I couldn't find 
   * [`verilator`](https://www.veripool.org/wiki/verilator): the fastest free Verilog HDL simulator.
 * **`sys-devel`**
   * [`riscv-gnu-toolchain`](https://github.com/riscv/riscv-gnu-toolchain): the RISC-V GNU toolchain.
+
+## Installation
+
+### Layman
+
+```sh
+layman -a lizard
+```
+
+### Manual
+
+**`/etc/portage/repos.conf/lizard.conf`:**
+```conf
+[panther]
+priority = 50
+location = /var/lib/layman/panther
+layman-type = git
+sync-type = laymansync
+sync-uri = https://github.com/orangeturtle739/panther.git
+auto-sync = Yes
+```
