@@ -4,7 +4,7 @@ A collection of [Gentoo](https://www.gentoo.org/) ebuilds which I couldn't find 
 
 ## Contents
 
-* **`app-admin**
+* **`app-admin`**
   * [`bitwarden-cli-bin`](https://github.com/bitwarden/cli): bitwarden CLI binary.
 * **`app-crypt`**
   * `staticgpg`: from https://github.com/sakaki-/sakaki-tools
