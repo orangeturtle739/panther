@@ -36,7 +36,7 @@ layman -a lizard
 ### Manual
 
 **`/etc/portage/repos.conf/lizard.conf`:**
-```conf
+```ini
 [panther]
 priority = 50
 location = /var/lib/layman/panther
