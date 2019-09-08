@@ -9,7 +9,7 @@ SRC_URI="https://github.com/bitwarden/cli/releases/download/v${PV}/bw-linux-${PV
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE=""
 RESTRICT="strip"
 
