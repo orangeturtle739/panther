@@ -47,3 +47,15 @@ sync-type = laymansync
 sync-uri = https://github.com/orangeturtle739/panther.git
 auto-sync = Yes
 ```
+
+### Selecting Specific Packages
+
+To only install specific packages from this overlay, mask all of them, and then unmask specific packages.
+Mask all packages in `/etc/portage/package.mask` by adding:
+```
+*/*::panther
+```
+Then unamsk the package you want (in this case `net-misc/can-utils`) in `/etc/portage/package.unmask` by adding:
+```
+net-misc/can-utils::panther
+```
