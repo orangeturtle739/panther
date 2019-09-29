@@ -6,6 +6,8 @@ A collection of [Gentoo](https://www.gentoo.org/) ebuilds which I couldn't find 
 
 * **`app-admin`**
   * [`bitwarden-cli-bin`](https://github.com/bitwarden/cli): bitwarden CLI binary.
+* **`app-arch`**
+  * [`dtrx`](https://github.com/moonpyk/dtrx): intelligent archive extraction.
 * **`app-crypt`**
   * `staticgpg`: from https://github.com/sakaki-/sakaki-tools
 * **`app-misc`**
