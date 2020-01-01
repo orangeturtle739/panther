@@ -34,12 +34,12 @@ A collection of [Gentoo](https://www.gentoo.org/) ebuilds which I couldn't find 
 ### Layman
 
 ```sh
-layman -a lizard
+layman -a panther
 ```
 
 ### Manual
 
-**`/etc/portage/repos.conf/lizard.conf`:**
+**`/etc/portage/repos.conf/panther.conf`:**
 ```ini
 [panther]
 priority = 50
