@@ -2,7 +2,7 @@ EAPI="5"
 
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="https://github.com/linux-can/can-utils"
-	vcs=git-2
+	vcs=git-r3
 else
 	SRC_URI=""
 	KEYWORDS="~amd64 ~x86"
