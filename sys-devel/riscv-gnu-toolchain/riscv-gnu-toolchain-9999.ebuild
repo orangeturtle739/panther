@@ -32,9 +32,7 @@ RDEPEND=""
 
 RESTRICT="strip"
 
-src_prepare() {
-	eapply "${FILESDIR}/multilib-rv64im-lp64.patch"
-}
+PATCHES="${FILESDIR}/multilib-rv64im-lp64.patch"
 
 src_configure() {
 	econf --prefix="$T/install/opt/riscv" --enable-multilib
