@@ -47,7 +47,7 @@ PATCHES=("${FILESDIR}/millis.patch" "${FILESDIR}/utc.patch")
 
 src_configure() {
 	local mycmakeargs=(
-		$(cmake-utils_use_find_package exif Exiv2)
+		$(cmake-utils_use_find_package exif LibExiv2)
 		$(cmake-utils_use_find_package taglib Taglib)
 		$(cmake-utils_use_find_package pdf PoDoFo)
 		$(cmake-utils_use_find_package truetype Freetype)
