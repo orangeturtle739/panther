@@ -12,6 +12,7 @@ A collection of [Gentoo](https://www.gentoo.org/) ebuilds which I couldn't find 
   * `staticgpg`: from https://github.com/sakaki-/sakaki-tools
 * **`app-misc`**
   * [`ckb-next`](https://github.com/mattanger/ckb-next): open-source driver for Corsair keyboards and mice.
+  * [`open-rgb`](https://gitlab.com/CalcProgrammer1/OpenRGB): Open-source driver for RGB lighting on motherboards and other components.
 * **`kde-misc`**
   * `krename`: a hacked version of `krename` which supports timestamps accurate to the millisecond, and UTC times.
 * **`media-gfx`**
