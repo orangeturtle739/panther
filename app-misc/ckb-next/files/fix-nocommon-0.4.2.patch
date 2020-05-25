@@ -1,0 +1,26 @@
+From 614613f9b90492b7feb614ade5bf8e89e11674a3 Mon Sep 17 00:00:00 2001
+From: Erik Zeek <zeekec@gmail.com>
+Date: Tue, 12 May 2020 09:56:49 -0600
+Subject: [PATCH] Fix gcc-10/-fno-common error
+
+Signed-off-by: Erik Zeek <zeekec@gmail.com>
+---
+ src/daemon/devnode.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/daemon/devnode.h b/src/daemon/devnode.h
+index a0b3a93..349e778 100644
+--- a/src/daemon/devnode.h
++++ b/src/daemon/devnode.h
+@@ -5,7 +5,7 @@
+ #include "usb.h"
+ 
+ /// Device path base ("/dev/input/ckb" or "/var/run/ckb")
+-const char *const devpath;
++extern const char *const devpath;
+ 
+ /// Group ID for the control nodes. -1 to give read/write access to everybody
+ extern long gid;
+-- 
+2.26.2
+
