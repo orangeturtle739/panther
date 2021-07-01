@@ -19,7 +19,6 @@ A collection of [Gentoo](https://www.gentoo.org/) ebuilds which I couldn't find 
   *  [`can-utils`](https://github.com/linux-can/can-utils): Linux-CAN / SocketCAN user space applications.
 * **`net-vpn`**
   * [`net-vpn/mlvpn`](https://zehome.github.io/MLVPN/): Multi-link VPN (ADSL/SDSL/xDSL/Network aggregation / bonding).
-  * [`net-vpn/nordnm`](https://github.com/Chadsr/NordVPN-NetworkManager): A CLI tool for automating the importing, securing and usage of NordVPN OpenVPN servers through NetworkManager.
 * **`net-wireless`**
   * `broadcom-sta`: a patched driver for use with kernels >= 5.1.
 * **`sci-electronics`**
