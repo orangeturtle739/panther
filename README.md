@@ -19,8 +19,6 @@ A collection of [Gentoo](https://www.gentoo.org/) ebuilds which I couldn't find 
   *  [`can-utils`](https://github.com/linux-can/can-utils): Linux-CAN / SocketCAN user space applications.
 * **`net-vpn`**
   * [`net-vpn/mlvpn`](https://zehome.github.io/MLVPN/): Multi-link VPN (ADSL/SDSL/xDSL/Network aggregation / bonding).
-* **`net-wireless`**
-  * `broadcom-sta`: a patched driver for use with kernels >= 5.1.
 * **`sci-electronics`**
   * [`quartus-prime-lite`](http://fpgasoftware.intel.com/?edition=lite): a quartus prime lite setup with included libfontconfig and libfreetype binaries.
   * [`verilator`](https://www.veripool.org/wiki/verilator): the fastest free Verilog HDL simulator.
